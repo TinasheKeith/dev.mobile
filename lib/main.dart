@@ -1,3 +1,4 @@
+import 'package:dev_mobile/services/articles_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'dev.mobile',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          centerTitle: true,
+        ),
         primaryColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.dark,
@@ -28,6 +33,18 @@ class MyApp extends StatelessWidget {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("dev.mobile!"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            ArticlesService.getArticles();
+          },
+          child: Text("get articles 🗞"),
+        ),
+      ),
+    );
   }
 }
