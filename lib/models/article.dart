@@ -1,3 +1,15 @@
+class Articles {
+  List<Article> articles;
+
+  Articles(this.articles);
+
+  // factory Articles.fromJson(Map json) {
+  //   return Articles(
+  //     articles: json
+  //   );
+  // }
+}
+
 class Article {
   final String typeOf;
   final int id;
@@ -6,14 +18,14 @@ class Article {
   final String coverImageUrl;
   final String readablePublishDate;
   final String socialImageUrl;
-  final List<String> tagList;
+  // final List<String> tagList;
   final String slug;
   final String url;
   final String canonicalUrl;
   final int commentsCount;
   final int publicReactionsCount;
-  final User user;
-  final Organisation organisation;
+  // final User user;
+  // final Organisation organisation;
 
   Article({
     this.canonicalUrl,
@@ -21,39 +33,38 @@ class Article {
     this.coverImageUrl,
     this.description,
     this.id,
-    this.organisation,
+    // this.organisation,
     this.publicReactionsCount,
     this.readablePublishDate,
     this.slug,
     this.socialImageUrl,
-    this.tagList,
+    // this.tagList,
     this.title,
     this.typeOf,
     this.url,
-    this.user,
+    // this.user,
   });
 
   factory Article.fromJson(Map json) {
-    Organisation organisation = Organisation.fromJson(json["organization"]);
-    User user = User.fromJson(json["user"]);
+    // Organisation organisation = Organisation.fromJson(json["organization"]);
+    // User user = User.fromJson(json["user"]);
 
     return Article(
-      canonicalUrl: json["canonical_url"],
-      commentsCount: json["comments_count"],
-      coverImageUrl: json["cover_image"],
-      description: json["description"],
-      id: json["id"],
-      organisation: organisation,
-      user: user,
-      publicReactionsCount: json["public_reactions_count"],
-      readablePublishDate: json["readable_publish_date"],
-      slug: json["slug"],
-      socialImageUrl: json["social_image"],
-      tagList: json["tag_list"],
-      title: json["title"],
-      typeOf: json["type_of"],
-      url: json["url"]
-    );
+        canonicalUrl: json["canonical_url"],
+        commentsCount: json["comments_count"],
+        coverImageUrl: json["cover_image"],
+        description: json["description"],
+        id: json["id"],
+        // organisation: organisation,
+        // user: user,
+        publicReactionsCount: json["public_reactions_count"],
+        readablePublishDate: json["readable_publish_date"],
+        slug: json["slug"],
+        socialImageUrl: json["social_image"],
+        // tagList: json["tag_list"],
+        title: json["title"],
+        typeOf: json["type_of"],
+        url: json["url"]);
   }
 }
 

@@ -15,13 +15,14 @@ class MyApp extends StatelessWidget {
       title: 'dev.mobile',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
+          color: canvasColor,
           elevation: 0,
           centerTitle: true,
         ),
         primaryColor: primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         brightness: Brightness.dark,
-        backgroundColor: canvasColor,
+        canvasColor: canvasColor
       ),
       routes: {
         "/": (context) => App(),
@@ -39,6 +40,7 @@ class App extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
+          color: Theme.of(context).primaryColor,
           onPressed: () {
             ArticlesService.getArticles();
           },
